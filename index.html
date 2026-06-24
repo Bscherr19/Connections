@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connections HQ: Early Careers Edition</title>
+  <meta name="description" content="A mobile-friendly event hub for Early Careers Week connections, agenda, showcase, and resources.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a class="brand" href="#home" aria-label="Connections HQ home">
+        <span class="brand-mark" aria-hidden="true">CHQ</span>
+        <span>
+          <strong>Connections HQ</strong>
+          <small>Early Careers Edition</small>
+        </span>
+      </a>
+
+      <nav class="top-nav" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#connect">Connect</a>
+        <a href="#showcase">Showcase</a>
+        <a href="#resources">Resources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section-shell" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">July 21-24 · Chicago · The Mart</p>
+        <h1>Connections HQ</h1>
+        <p class="hero-subtitle">Early Careers Edition</p>
+        <p class="hero-intro">Your pocket guide for today's connections, conversations, and community moments.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#connect">Start with a Prompt</a>
+          <a class="button secondary" href="#schedule">View Schedule</a>
+        </div>
+      </div>
+
+      <aside class="hero-visual" aria-labelledby="goal-title">
+        <img src="hero-event.png" alt="Early-career professionals networking in a bright Chicago conference space.">
+        <div class="goal-card">
+          <span class="mini-label">Today's Goal</span>
+          <h2 id="goal-title">Meet someone new, learn something useful, and leave with at least one next step.</h2>
+        </div>
+      </aside>
+    </section>
+
+    <section class="quick-grid section-shell" aria-label="Quick actions">
+      <article class="quick-card">
+        <span class="quick-icon" aria-hidden="true">◎</span>
+        <h2>What's Happening Today</h2>
+        <p>Check the agenda by day and room, then scan for transitions, meals, and key sessions.</p>
+      </article>
+      <article class="quick-card">
+        <span class="quick-icon" aria-hidden="true">↔</span>
+        <h2>How to Connect</h2>
+        <p>Use a prompt, try bingo, or pick a quick challenge when the room needs a little momentum.</p>
+      </article>
+      <article class="quick-card">
+        <span class="quick-icon" aria-hidden="true">★</span>
+        <h2>What to Share</h2>
+        <p>Spotlight a hidden gem, a project win, a short story, or a skill people should know about.</p>
+      </article>
+    </section>
+
+    <section class="info-band" aria-label="Know before you go">
+      <div class="section-shell info-grid">
+        <div>
+          <p class="eyebrow">Know Before You Go</p>
+          <h2>The day is built for connection, visibility, and career navigation.</h2>
+        </div>
+        <ul class="logistics-list">
+          <li><strong>Event location:</strong> The Merchandise Mart, 8th Floor, 222 W Merchandise Mart Plaza.</li>
+          <li><strong>Main rooms:</strong> Midway, Loop North, Loop South, Glass North, Kedzie, Bronzeville, and Pulaski.</li>
+          <li><strong>Bring:</strong> Allstate badge, business casual outfit, and a ready-to-share intro.</li>
+          <li><strong>Travelers:</strong> Holiday Inn Chicago Downtown - Wolf Point is the listed hotel hub.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section-shell page-section" id="schedule">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Agenda</p>
+          <h2>Today's Schedule</h2>
+        </div>
+        <p>Tap a day to see the participant-facing agenda. Times are Central Time and editable in <code>script.js</code>.</p>
+      </div>
+
+      <div class="day-tabs" role="tablist" aria-label="Schedule days">
+        <button class="day-tab active" type="button" data-day="tuesday">Tuesday</button>
+        <button class="day-tab" type="button" data-day="wednesday">Wednesday</button>
+        <button class="day-tab" type="button" data-day="thursday">Thursday</button>
+        <button class="day-tab" type="button" data-day="friday">Friday</button>
+      </div>
+
+      <div class="schedule-tools">
+        <label class="search-label" for="schedule-search">Find a session or room</label>
+        <input id="schedule-search" type="search" placeholder="Try 'showcase', 'lunch', or 'Loop South'">
+      </div>
+
+      <div class="schedule-list" id="schedule-list" aria-live="polite"></div>
+    </section>
+
+    <section class="section-shell page-section" id="connect">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Connect</p>
+          <h2>Start a Conversation</h2>
+        </div>
+        <p>Use these when you meet someone new, sit at a table with unfamiliar people, or need a quick group spark.</p>
+      </div>
+
+      <div class="connect-layout">
+        <article class="feature-panel prompt-panel">
+          <div class="panel-heading">
+            <span class="panel-icon" aria-hidden="true">?</span>
+            <div>
+              <h3>Random Prompt Generator</h3>
+              <p>Low-pressure questions for networking and table talk.</p>
+            </div>
+          </div>
+          <div class="prompt-output" id="prompt-output" aria-live="polite">What is one project you are proud of working on?</div>
+          <button class="button primary full-width" type="button" id="new-prompt">Give me a prompt</button>
+        </article>
+
+        <article class="feature-panel challenge-panel">
+          <div class="panel-heading">
+            <span class="panel-icon" aria-hidden="true">!</span>
+            <div>
+              <h3>Mayhem Move of the Moment</h3>
+              <p>Playful, quick, and still workplace appropriate.</p>
+            </div>
+          </div>
+          <div class="prompt-output small" id="challenge-output" aria-live="polite">Find someone whose role sounds completely different from yours.</div>
+          <button class="button secondary full-width" type="button" id="new-challenge">New challenge</button>
+        </article>
+      </div>
+
+      <article class="bingo-panel" aria-labelledby="bingo-title">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">Connection Bingo</p>
+            <h3 id="bingo-title">Tap cards as you go</h3>
+          </div>
+          <button class="button text-button" type="button" id="reset-bingo">Reset Bingo</button>
+        </div>
+        <div class="bingo-grid" id="bingo-grid"></div>
+      </article>
+    </section>
+
+    <section class="section-shell page-section" id="showcase">
+      <div class="showcase-hero">
+        <p class="eyebrow">Early Careers Showcase</p>
+        <h2>Not a talent show. Not a presentation contest.</h2>
+        <p>Just a chance to spotlight hidden gems, small brags, unexpected skills, and early career energy.</p>
+      </div>
+
+      <div class="showcase-grid">
+        <article class="feature-panel">
+          <h3>What can I share?</h3>
+          <ul class="clean-list">
+            <li>A hidden talent</li>
+            <li>A meaningful object</li>
+            <li>A project win</li>
+            <li>A fun story</li>
+            <li>A quick skill demo</li>
+            <li>A lesson learned</li>
+          </ul>
+        </article>
+        <article class="feature-panel">
+          <h3>Showcase norms</h3>
+          <ul class="clean-list">
+            <li>Keep it brief</li>
+            <li>Cheer people on</li>
+            <li>No pressure to be perfect</li>
+            <li>Make space for different comfort levels</li>
+          </ul>
+        </article>
+        <article class="feature-panel">
+          <h3>Optional audience categories</h3>
+          <ul class="clean-list">
+            <li>Most Unexpected</li>
+            <li>Best Story</li>
+            <li>Biggest "I Need to Learn That" Moment</li>
+            <li>Best Work-Appropriate Chaos</li>
+            <li>Community Favorite</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="action-row" aria-label="Showcase links">
+        <a class="button primary" href="#" data-placeholder-link>Sign Up to Share</a>
+        <a class="button secondary" href="#" data-placeholder-link>Submit a Hidden Gem</a>
+        <a class="button secondary" href="#" data-placeholder-link>Vote / Reflect</a>
+      </div>
+    </section>
+
+    <section class="section-shell page-section" id="resources">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Resources</p>
+          <h2>Keep the Momentum</h2>
+        </div>
+        <p>Replace the placeholder buttons with your Microsoft Forms, SharePoint, or resource links when ready.</p>
+      </div>
+
+      <div class="resource-grid" id="resource-grid"></div>
+
+      <article class="template-panel">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">Follow-Up Template</p>
+            <h3>Great connecting today</h3>
+          </div>
+          <button class="button text-button" type="button" id="copy-email">Copy Template</button>
+        </div>
+        <pre id="email-template">Subject: Great connecting today
+
+Hi [Name],
+
+It was great meeting you at the Early Careers Connections event today. I enjoyed learning more about [specific thing you discussed].
+
+I'd love to stay connected and continue the conversation.
+
+Best,
+[Your Name]</pre>
+        <p class="copy-status" id="copy-status" aria-live="polite"></p>
+      </article>
+
+      <article class="reflection-panel" aria-labelledby="reflection-title">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">Before You Leave</p>
+            <h3 id="reflection-title">Quick reflection</h3>
+          </div>
+          <button class="button text-button" type="button" id="clear-reflection">Clear</button>
+        </div>
+        <div class="reflection-grid">
+          <label>One person I met today:<textarea data-reflection="person" rows="3"></textarea></label>
+          <label>One thing I learned:<textarea data-reflection="learned" rows="3"></textarea></label>
+          <label>One next step I want to take:<textarea data-reflection="nextStep" rows="3"></textarea></label>
+          <label>One question I still have:<textarea data-reflection="question" rows="3"></textarea></label>
+        </div>
+        <p class="privacy-note">Saved only in this browser on this device. No login, database, tracking, or analytics.</p>
+      </article>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <a href="#home"><span aria-hidden="true">⌂</span>Home</a>
+    <a href="#schedule"><span aria-hidden="true">□</span>Schedule</a>
+    <a href="#connect"><span aria-hidden="true">◇</span>Connect</a>
+    <a href="#showcase"><span aria-hidden="true">★</span>Showcase</a>
+    <a href="#resources"><span aria-hidden="true">↗</span>Resources</a>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
